@@ -10,7 +10,7 @@ async function populate() {
                     first_name TEXT NOT NULL,
                     last_name TEXT NOT NULL,
                     username VARCHAR(255) NOT NULL,
-                    password VARCHAR(50) NOT NULL,
+                    password VARCHAR(255) NOT NULL,
                     member BOOLEAN DEFAULT FALSE
                 );
             `
