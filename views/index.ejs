@@ -6,6 +6,7 @@
     <title><%= title %></title>
 </head>
 <body>
+    <%- include('partials/header') %>
     <h1>Home</h1>
     <% if (locals.user) {%>
         <h1>WELCOME BACK <%= user.first_name %></h1>
