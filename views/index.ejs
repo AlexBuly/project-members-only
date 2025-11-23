@@ -10,6 +10,7 @@
     <h1>Home</h1>
     <% if (locals.user) {%>
         <h1>WELCOME BACK <%= user.first_name %></h1>
+        <a href="/log-out">LOG OUT</a>
     <%}%>
     <h3>List of all messages</h3>
 </body>

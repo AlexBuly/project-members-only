@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const signupRouter = require("./routes/signupRouter");
 const loginRouter = require("./routes/loginRouter");
 const indexRouter = require("./routes/indexRouter");
+const loginController = require("./controllers/loginController");
 
 app.use(
     session({
@@ -64,6 +65,7 @@ app.use((req, res, next) => {
 app.use("/sign-up", signupRouter);
 app.use("/login", loginRouter);
 app.use("/", indexRouter);
+app.get("/log-out", loginController.logout);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App running at http://localhost:${PORT}`));
