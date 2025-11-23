@@ -16,6 +16,7 @@ const signupRouter = require("./routes/signupRouter");
 const loginRouter = require("./routes/loginRouter");
 const indexRouter = require("./routes/indexRouter");
 const loginController = require("./controllers/loginController");
+const messagesRouter = require("./routes/messagesRouter");
 
 app.use(
     session({
@@ -65,6 +66,7 @@ app.use((req, res, next) => {
 app.use("/sign-up", signupRouter);
 app.use("/login", loginRouter);
 app.use("/", indexRouter);
+app.use("/new", messagesRouter);
 app.get("/log-out", loginController.logout);
 
 const PORT = process.env.PORT || 3000;
