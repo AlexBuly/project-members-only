@@ -22,7 +22,9 @@ async function populate() {
                     title VARCHAR(255),
                     text VARCHAR(255),
                     user_id INT,
-                    FOREIGN KEY (user_id) REFERENCES Users(id)
+                    FOREIGN KEY (user_id) REFERENCES Users(id),
+                    timestamp DATE,
+                    author TEXT
                 );
             `
         );
