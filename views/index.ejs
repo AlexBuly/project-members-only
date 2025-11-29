@@ -9,9 +9,20 @@
     <%- include('partials/header') %>
     <h1>Home</h1>
     <% if (locals.user) {%>
-        <h1>WELCOME BACK <%= user.first_name %></h1>
+        <h1>WELCOME BACK, <%= user.first_name %></h1>
         <a href="/log-out">LOG OUT</a>
+        <br>
+        <a href="/new">Create new message</a>
     <%}%>
-    <h3>List of all messages</h3>
+    <ul>
+        <% messages.forEach(msg => { %>
+            <li>
+            <strong><%= msg.author %></strong> — 
+            <em><%= new Date(msg.timestamp).toLocaleString() %></em>
+            <p><%= msg.title %></p>
+            <p><%= msg.text %></p>
+            </li>
+        <% }) %>
+    </ul>
 </body>
 </html>
