@@ -2,4 +2,7 @@
     <a href="/">Home</a>
     <a href="sign-up">Sign Up</a>
     <a href="login">Login</a>
+    <% if (locals.user) {%>
+        <a href="/join">Become a member</a>
+    <%}%>
 </div>

@@ -17,6 +17,7 @@ const loginRouter = require("./routes/loginRouter");
 const indexRouter = require("./routes/indexRouter");
 const loginController = require("./controllers/loginController");
 const messagesRouter = require("./routes/messagesRouter");
+const membershipRouter = require("./routes/membershipRouter");
 
 app.use(
     session({
@@ -68,6 +69,7 @@ app.use("/login", loginRouter);
 app.use("/", indexRouter);
 app.use("/new", messagesRouter);
 app.get("/log-out", loginController.logout);
+app.use("/join", membershipRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App running at http://localhost:${PORT}`));
