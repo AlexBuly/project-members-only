@@ -22,6 +22,14 @@
             <% } %>
             <p><%= msg.title %></p>
             <p><%= msg.text %></p>
+            <% if (locals.user && locals.user.admin) { %>
+            <form action="new/delete/<%= msg.msg_id %>" 
+                  method="POST" 
+                  style="display:inline;"
+                  onsubmit="return confirm('Delete this item?');">
+                 <button type="submit">Delete</button>
+                </form>
+            <%}%>
             </li>
         <% }) %>
     </ul>

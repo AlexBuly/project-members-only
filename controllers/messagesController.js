@@ -23,7 +23,18 @@ const addMessage = async (req, res) => {
     }
 }
 
+const deleteMessage = async (req, res) => {
+     if (!req.user) return res.redirect("/login");
+     try {
+        await pool.query("DELETE FROM Messages WHERE msg_id = $1", [req.params.id]);
+     } catch (err) {
+        console.error(err);
+        res.status(500).send("Error deleting message");
+    }
+}
+
 module.exports = {
     renderMessageForm,
-    addMessage
+    addMessage,
+    deleteMessage
 };
