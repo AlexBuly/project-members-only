@@ -6,6 +6,11 @@
     <%}%>
     <% if (locals.user) {%>
         <a href="/log-out">Log out</a>
-        <a href="/join">Become a member</a>
+         <% if (locals.user && !locals.user.member) {%>
+            <a href="/join">Become a member</a>
+        <%}%>
+        <% if (locals.user && locals.user.member) {%>
+            <p>Member</p>
+        <%}%>
     <%}%>
 </div>
