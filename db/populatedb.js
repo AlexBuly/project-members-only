@@ -11,7 +11,8 @@ async function populate() {
                     last_name TEXT NOT NULL,
                     username VARCHAR(255) NOT NULL,
                     password VARCHAR(255) NOT NULL,
-                    member BOOLEAN DEFAULT FALSE
+                    member BOOLEAN DEFAULT FALSE,
+                    admin BOOLEAN DEFAULT FALSE
                 );
             `
         );
