@@ -16,8 +16,10 @@
     <ul>
         <% messages.forEach(msg => { %>
             <li>
-            <strong><%= msg.author %></strong> — 
-            <em><%= new Date(msg.timestamp).toLocaleString() %></em>
+            <% if (locals.user && locals.user.member) { %>
+                <strong><%= msg.author %></strong> — 
+                <em><%= new Date(msg.timestamp).toLocaleString() %></em>
+            <% } %>
             <p><%= msg.title %></p>
             <p><%= msg.text %></p>
             </li>
