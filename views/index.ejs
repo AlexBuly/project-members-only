@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title><%= title %></title>
 </head>
 <body>
     <%- include('partials/header') %>
-    <h1>Home</h1>
+     <h1 class="title">Home</h1>
     <% if (locals.user) {%>
-        <h1>WELCOME BACK, <%= user.first_name %></h1>
-        <br>
-        <a href="/new">Create new message</a>
+        <h1 class="welcome">Welcome, <%= user.first_name %></h1>
+        <% if (locals.user && locals.user.member) {%>
+            <div class="member">Member</div>
+        <%}%>
     <%}%>
-    <ul>
+    <div class="container">
         <% messages.forEach(msg => { %>
-            <li>
-            <% if (locals.user && locals.user.member) { %>
-                <strong><%= msg.author %></strong> — 
-                <em><%= new Date(msg.timestamp).toLocaleString() %></em>
-            <% } %>
-            <p><%= msg.title %></p>
-            <p><%= msg.text %></p>
-            <% if (locals.user && locals.user.admin) { %>
-            <form action="new/delete/<%= msg.msg_id %>" 
-                  method="POST" 
-                  style="display:inline;"
-                  onsubmit="return confirm('Delete this item?');">
-                 <button type="submit">Delete</button>
-                </form>
-            <%}%>
-            </li>
-        <% }) %>
-    </ul>
+        <% if (locals.user && locals.user.member) { %>
+            <b><%= msg.author %></b>
+            <b><%= new Date(msg.timestamp).toLocaleString() %></b>
+        <% } %>
+        <h3><%= msg.title %></h3>
+        <p><%= msg.text %></p>
+        <% if (locals.user && locals.user.admin) { %>
+        <form action="new/delete/<%= msg.msg_id %>" 
+            method="POST" 
+            style="display:inline;"
+            onsubmit="return confirm('Delete this item?');">
+            <button type="submit">Delete</button>
+            <br><br>
+        </form>
+        <%}%>
+    <% }) %>
+    </div>
+    <% if (locals.user) {%>
+        <a class="new-message" href="/new">Create new message</a>
+        <br>
+    <%}%>
 </body>
 </html>

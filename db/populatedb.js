@@ -24,7 +24,7 @@ async function populate() {
                     text VARCHAR(255),
                     user_id INT,
                     FOREIGN KEY (user_id) REFERENCES Users(id),
-                    timestamp DATE,
+                    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     author TEXT
                 );
             `

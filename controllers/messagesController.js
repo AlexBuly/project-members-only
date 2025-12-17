@@ -27,6 +27,7 @@ const deleteMessage = async (req, res) => {
      if (!req.user) return res.redirect("/login");
      try {
         await pool.query("DELETE FROM Messages WHERE msg_id = $1", [req.params.id]);
+        return res.redirect("/");
      } catch (err) {
         console.error(err);
         res.status(500).send("Error deleting message");

@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title><%= title %></title>
 </head>
 <body>
   <%- include('partials/header') %>
-  <h1>Sign Up</h1>
+  <h1 class="title">Sign Up</h1>
   
     <% if (errors && errors.length > 0) { %>
-    <ul style="color:red">
+    <div style="color:red;text-align: center;" >
       <% errors.forEach(err => { %>
-        <li><%= err.msg %></li>
+        <%= err.msg %> <br><br>
       <% }) %>
-    </ul>
+      </div>
   <% } %>
-
-  <form action="/sign-up" method="POST">
-    <label for="username">Username</label>
-    <input id="username" name="username" placeholder="username" type="text" />
-
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-
-    <label for="confirmPassword">Confirm Password</label>
-    <input id="confirmPassword" name="confirmPassword" type="password" />
-
-    <label for="first_name">First Name</label>
-    <input type="text" name="first_name" id="first_name">
-
-    <label for="last_name">Last Name</label>
-    <input type="text" name="last_name" id="last_name">
-    <button type="submit">Sign Up</button>
-  </form>
+  <div class="signup-container">
+    <form class="signup-form" action="/sign-up" method="POST">
+      <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" />
+      </div>
+      <br>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" />
+      </div>
+      <br>
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" />
+      </div>
+      <br>
+      <div>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name">
+      </div>
+      <br>
+      <div>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name">
+      </div>
+      <br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
 </body>
 </html>

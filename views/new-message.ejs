@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title><%= title %></title>
 </head>
 <body>
     <%- include('partials/header') %>
-    <h1>New Message</h1>
-
-    <form action="/new" method="POST">
-        <label for="title">Message title</label>
-        <input type="text" name="title" id="title">
-        <br><br>
-        <label for="text">Message body</label>
-        <textarea name="text" id="text"></textarea>
-         <button type="submit">Add message</button>
-    </form>
+    <h1 class="title">New Message</h1>
+    <div class="message-container">
+         <form class="message-form" action="/new" method="POST">
+            <label for="title">Message title</label>
+            <input type="text" name="title" id="title" required>
+            <br><br>
+            <label for="text">Message body</label>
+            <textarea name="text" id="text"></textarea required>
+            <br><br>
+            <button type="submit">Add message</button>
+        </form>
+    </div>
 </body>
 </html>

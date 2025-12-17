@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.header {
+    background-color: black;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.container {
+    background-color: white;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+button, .new-message {
+    cursor: pointer;
+    background-color: rgb(72, 108, 207);
+    color: white;
+    border-radius: 0.5em;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover, .new-message:hover {
+    background-color: rgb(50, 74, 141);;
+}
+
+button:active, .new-message:active {
+    background-color: rgb(38, 57, 107);;
+}
+
+
+.new-message {
+    padding: 0.3em;
+    margin-left: 1em;
+}
+
+.welcome, .member {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: rgb(204, 204, 204);
+}
+
+a:active {
+    color: rgb(155, 155, 155);
+}
+
+.message-container, .login-container, .signup-container {
+    display: flex;
+    justify-content: center;
+}
+
+.message-form, .login-form, .signup-form {
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: rgb(79, 157, 247);
+    color: white;
+}
