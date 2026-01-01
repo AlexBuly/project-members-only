@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= title %></title>
 </head>
 <body>
     <%- include('partials/header') %>
-    <form action="/admin" method="POST">
-        <label for="admin">Admin code</label>
-        <input type="password" name="admin" id="admin">
+    <h1 class="title"><%= title %></h1>
+    <div class="container">
+         <form action="/admin" method="POST">
+            <label for="admin">Admin code</label>
+            <input type="password" name="admin" id="admin">
         <button type="submit">Submit</button>
-    </form>
+        </form>
+    </div>
 </body>
 </html>

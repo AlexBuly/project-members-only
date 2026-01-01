@@ -8,10 +8,13 @@
 </head>
 <body>
     <%- include('partials/header') %>
-    <form action="/join" method="POST">
-        <label for="join">Secret code</label>
-        <input type="password" name="join" id="join">
-        <button type="submit">Submit</button>
-    </form>
+    <h1 class="title"><%= title %></h1>
+    <div class="container">
+        <form action="/join" method="POST">
+            <label for="join">Secret code</label>
+            <input type="password" name="join" id="join">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

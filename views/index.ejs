@@ -17,7 +17,8 @@
     <%}%>
     <div class="container">
         <% messages.forEach(msg => { %>
-        <% if (locals.user && locals.user.member) { %>
+            <div class="message">
+                <% if (locals.user && locals.user.member) { %>
             <b><%= msg.author %></b>
             <b><%= new Date(msg.timestamp).toLocaleString() %></b>
         <% } %>
@@ -32,6 +33,7 @@
             <br><br>
         </form>
         <%}%>
+            </div>
     <% }) %>
     </div>
     <% if (locals.user) {%>
